@@ -11,6 +11,7 @@ node_modules/
 # All run output goes under reports/runs/{timestamp}/ — do not commit
 reports/runs/
 # Legacy flat paths (kept in case old runs exist locally)
+reports/
 reports/html/
 reports/junit/
 reports/test-results/
@@ -55,6 +56,13 @@ desktop.ini
 .vscode/*
 !.vscode/extensions.json
 !.vscode/launch.json
+
+# Local agent / MCP tooling state
+# These may contain machine-local paths, permissions, captured browser state, or tokens.
+.mcp.json
+.codex/
+.claude/settings.local.json
+.playwright-mcp/
 
 # ─── Diagrams ────────────────────────────────────────────────────────────────
 docs/diagrams/
