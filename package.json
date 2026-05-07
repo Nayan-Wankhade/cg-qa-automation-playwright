@@ -1,0 +1,30 @@
+{
+  "name": "cg-playwright-automation",
+  "version": "1.0.0",
+  "description": "Common Ground -- E2E Automation Suite",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:e2e": "playwright test --project=e2e",
+    "test:funder": "playwright test --grep @funder",
+    "test:implementer": "playwright test --grep @implementer",
+    "test:both": "playwright test --grep @both",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:ci": "cross-env CI=true playwright test --forbid-only",
+    "typecheck": "tsc --noEmit",
+    "report": "node scripts/open-latest-report.js",
+    "clean": "rimraf reports test-results"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.7",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,76 @@
+# ─── Dependencies ────────────────────────────────────────────────────────────
+node_modules/
+
+# ─── Environment / secrets ───────────────────────────────────────────────────
+# NEVER commit credentials or environment variables
+.env
+.env.local
+.env.*.local
+
+# ─── Playwright test output ───────────────────────────────────────────────────
+# All run output goes under reports/runs/{timestamp}/ — do not commit
+reports/runs/
+# Legacy flat paths (kept in case old runs exist locally)
+reports/html/
+reports/junit/
+reports/test-results/
+test-results/
+playwright-report/
+
+# ─── Temporary / generated files ─────────────────────────────────────────────
+# Deleted at end of every /cg-automate run, but ignore in case of crash
+parsed_tests.json
+
+# ─── TypeScript build output ─────────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+*.js.map
+
+# ─── Playwright browser cache ────────────────────────────────────────────────
+# Downloaded by npx playwright install — large, reproducible, not source
+.playwright/
+ms-playwright/
+
+# ─── Auth state (if ever added) ──────────────────────────────────────────────
+src/fixtures/.auth/
+
+# ─── Excel temp files (Office lock files) ────────────────────────────────────
+test-cases/~$*
+*.tmp
+
+# ─── OS artefacts ────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE / editor ────────────────────────────────────────────────────────────
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VSCode — workspace settings are personal; keep extensions.json if team-shared
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# ─── Diagrams ────────────────────────────────────────────────────────────────
+docs/diagrams/
+
+# ─── What IS tracked in git ──────────────────────────────────────────────────
+# (listed here as documentation, not as rules — git tracks everything not ignored)
+#
+#   CLAUDE.md                         — agent instructions
+#   playwright.config.ts              — test runner config
+#   package.json / tsconfig.json      — project manifest
+#   scripts/                          — parse_excel.py, key_derivation.py
+#   src/                              — all Page Objects, specs, fixtures, constants
+#   kb/pages/                         — read-only reference KB (pages)
+#   kb/validations/                   — read-only reference KB (validations)
+#   kb/rules/                         — read-only reference KB (rules)
+#   kb/personas/                      — read-only reference KB (personas)
+#   kb/flows/                         — read-only reference KB (flows)
+#   kb/selectors/                     — selector maps written during runs (/kb-sync to GitHub)
+#   kb/execution-reports/             — run reports written during runs (/kb-sync to GitHub)
